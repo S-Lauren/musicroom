@@ -23,7 +23,7 @@ const url ="https://www.googleapis.com/youtube/v3/search?";
 const delayQuery = _.debounce((e)=> setList(e), 500)
 
 useEffect(() => {
-  fetch(`${url}&part=snippet&q=${list}&key=AIzaSyANYGCd7fL0V8f9iLuAXbQxVCw4wDlmzHs&maxResults=25`)
+  fetch(`${url}&part=snippet&q=${list}&key=${YTB_KEY}&maxResults=25`)
   .then(resp => resp.json())
   .then(data => {			
     setResults(data.items)

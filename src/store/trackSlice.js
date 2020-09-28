@@ -27,7 +27,7 @@ export const fetchTracks = (id) =>
 async dispatch => {
   const YTB_KEY = process.env.REACT_APP_YTB_API_KEY;
   const url ="https://www.googleapis.com/youtube/v3/videos?";
-  fetch(`${url}&part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=AIzaSyANYGCd7fL0V8f9iLuAXbQxVCw4wDlmzHs`)
+  fetch(`${url}&part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${YTB_KEY}`)
     .then(response =>  response.json())
     .then((data => {
       dispatch(setTrackItem(data))
